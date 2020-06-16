@@ -73,6 +73,7 @@ import org.gradle.internal.serialize.BaseSerializerFactory.PATH_SERIALIZER
 import org.gradle.internal.serialize.BaseSerializerFactory.SHORT_SERIALIZER
 import org.gradle.internal.serialize.BaseSerializerFactory.STRING_SERIALIZER
 import org.gradle.internal.snapshot.ValueSnapshotter
+import org.gradle.internal.snapshot.impl.IsolatedSerializedValueSnapshot
 import org.gradle.internal.state.ManagedFactoryRegistry
 import org.gradle.process.ExecOperations
 import org.gradle.process.internal.ExecActionFactory
@@ -147,6 +148,7 @@ class Codecs(
 
         bind(IsolatedManagedValueCodec(managedFactoryRegistry))
         bind(IsolatedImmutableManagedValueCodec(managedFactoryRegistry))
+        bind(IsolatedSerializedValueSnapshotCodec)
         bind(IsolatedArrayCodec)
         bind(IsolatedSetCodec)
         bind(IsolatedListCodec)
